@@ -19,6 +19,7 @@ def datosesp():
     print ("3. Ciudad de Residencia")
     print ("4. Estudios")
     print ("5. Experiencias")
+    print ("6. Desconectar")
     eleccionesesp()
 def eleccionesesp():
     eleccion = input("¿Cuál entrada eliges? (Si no te acuerdas de las elecciones, escribe recordatorio)")
@@ -40,6 +41,8 @@ def eleccionesesp():
             eleccionesesp()
         case "recordatorio":
             datosesp()
+        case "6":
+            international()
         case other:
             print ("Entrada no valida")
             eleccionesesp()
@@ -63,6 +66,7 @@ def datoscat():
     print ("3. Ciutat de Residència")
     print ("4. Estudis")
     print ("5. Experiències")
+    print ("6. Desconectar")
     eleccionescat()
 def eleccionescat():
     eleccion = input("Quina entrada tries? (Si no te'n recordes de les eleccions escriu recordatori)")
@@ -84,6 +88,8 @@ def eleccionescat():
             eleccionescat()
         case "recordatori":
             datoscat()
+        case "6":
+            international()
         case other:
             print ("Entrada no vàlida")
             eleccionescat()
@@ -107,6 +113,7 @@ def datoseng():
     print ("3. Residence City")
     print ("4. Studies")
     print ("5. Experiences")
+    print ("6. Disconnect")
     eleccioneseng()
 def eleccioneseng():
     eleccion = input("Which entry do you choose? (If you don't remember the choices write reminder)")
@@ -128,6 +135,8 @@ def eleccioneseng():
             eleccioneseng()
         case "reminder":
             datoseng()
+        case "6":
+            international()
         case other:
             print ("Invalid input")
             eleccioneseng()
@@ -145,5 +154,3 @@ def international():
             international()
 print ("Bienvenido a la base de datos! / Benvingut a la base de dades! / Welcome to the database! :)")
 international()
-
-    
