@@ -3,9 +3,17 @@ import time
 import winsound
 from tqdm import tqdm
 from pyfiglet import figlet_format
+use = "xavi"
+passw = "boss"
+main = ""
 
 """Programa General"""
-
+def carga():
+    os.system('cls')
+    loading_bar_light(100)
+    time.sleep(0.5)
+    os.system('cls')
+    
 def loading_bar(total_iterations):
     # Display a loading bar for a given number of iterations.
     for i in tqdm(range(total_iterations), desc="Loading", leave=False):
@@ -26,10 +34,11 @@ def accesoesp():
     loading_bar_light(100)
     time.sleep(0.5)
     os.system('cls') 
-    user = input("Cuál es su nombre de usuario? ")
+    user = input("Cuál es su nombre de usuario? (Presione enter para volver a la seleccion de idiomas)")
+    os.system('cls')
     contra = input("Cuál es su contraseña? ")
-    if user == "xavi":
-        if contra == "boss":
+    if user == use:
+        if contra == passw:
             winsound.PlaySound('access.wav', winsound.SND_FILENAME)
             print ("¡Accediendo a la base de datos!")
             datosesp()
@@ -39,6 +48,9 @@ def accesoesp():
             os.system('cls')
             print ("Contraseña Incorrecta")
             accesoesp()
+    elif user == main:
+        loading_bar_light(100)
+        international()
     else:
         access_bar_fast(100)
         time.sleep(0.5)
@@ -67,20 +79,40 @@ def eleccionesesp():
     eleccion = input("¿Cuál entrada eliges? (Si no te acuerdas de las elecciones, escribe recordatorio)")
     match eleccion:
         case '1':
+            carga()
             print ("Xavier Sanchez Costa")
-            eleccionesesp()
+            salir = input("Para salir al menú principal presiona enter")
+            if salir == "":
+                os.system('cls') 
+                datosesp()
         case "2":
+            carga()
             print ("26/03/2008")
-            eleccionesesp()
+            salir = input("Para salir al menú principal presiona enter")
+            if salir == "":
+                os.system('cls') 
+                datosesp()
         case "3":
+            carga()
             print ("Terrassa, Barcelona")
-            eleccionesesp()
+            salir = input("Para salir al menú principal presiona enter")
+            if salir == "":
+                os.system('cls') 
+                datosesp()
         case "4":
+            carga()
             print ("Educación Secundaria Obligatoria / Dual Diploma")
-            eleccionesesp()
+            salir = input("Para salir al menú principal presiona enter")
+            if salir == "":
+                os.system('cls') 
+                datosesp()
         case "5":
+            carga()
             print ("Conducción, Aeronáutica, Programación en Python")
-            eleccionesesp()
+            salir = input("Para salir al menú principal presiona enter")
+            if salir == "":
+                os.system('cls') 
+                datosesp()
         case "recordatorio":
             datosesp()
         case "6":
@@ -96,18 +128,28 @@ def accesocat():
     loading_bar_light(100)
     time.sleep(0.5)
     os.system('cls') 
-    user = input("Quin és el vostre nom d'usuari? ")
+    user = input("Quin és el vostre nom d'usuari? (Presiona la tecla enter per tornar a la selecció d'idiomes)")
+    os.system('cls')
     contra = input("Quina és la contrasenya? ")
-    if user == "xavi":
-        if contra == "boss":
+    if user == use:
+        if contra == passw:
             winsound.PlaySound('access.wav', winsound.SND_FILENAME)
             print ("Accedint a la base de dades!")
             datoscat()
         else:
+            access_bar_fast(100)
             print ("Contrasenya Incorrecta")
+            time.sleep(3)
+            os.system('cls') 
             accesocat()
+    elif user == main:
+        loading_bar_light(100)
+        international() 
     else:
+        access_bar_fast(100)
         print ("Usuari Incorrecte")
+        time.sleep(3)
+        os.system('cls') 
         accesocat()
 
 
@@ -125,20 +167,45 @@ def eleccionescat():
     eleccion = input("Quina entrada tries? (Si no te'n recordes de les eleccions escriu recordatori)")
     match eleccion:
         case '1':
+            carga()
             print ("Xavier Sanchez Costa")
             eleccionescat()
+            salir = input("Per sortir al menú clica la tecla enter")
+            if salir == "":
+                os.system('cls') 
+                datoscat()
         case "2":
+            carga()
             print ("26/03/2008")
             eleccionescat()
+            salir = input("Per sortir al menú clica la tecla enter")
+            if salir == "":
+                os.system('cls') 
+                datoscat()
         case "3":
+            carga()
             print ("Terrassa, Barcelona")
             eleccionescat()
+            salir = input("Per sortir al menú clica la tecla enter")
+            if salir == "":
+                os.system('cls') 
+                datoscat()
         case "4":
+            carga()
             print ("Educacion Secundària Obligatòria / Dual Diploma")
             eleccionescat()
+            salir = input("Per sortir al menú clica la tecla enter")
+            if salir == "":
+                os.system('cls') 
+                datoscat()
         case "5":
+            carga()
             print ("Conducció, Aeronàutica, Programació a Python")
             eleccionescat()
+            salir = input("Per sortir al menú clica la tecla enter")
+            if salir == "":
+                os.system('cls') 
+                datoscat()
         case "recordatori":
             datoscat()
         case "6":
@@ -154,18 +221,26 @@ def accesoeng():
     loading_bar_light(100)
     time.sleep(0.5)
     os.system('cls') 
-    user = input("What is your username? ")
+    user = input("What is your username? (Press enter to return to the language selection)")
+    os.system('cls')
     contra = input("What is your password? ")
-    if user == "xavi":
-        if contra == "boss":
+    if user == use:
+        if contra == passw: 
             winsound.PlaySound('access.wav', winsound.SND_FILENAME)
             print ("Accessing the database!")
             datoseng()
         else:
             print ("Incorrect Password")
+            time.sleep(3)
+            os.system('cls') 
             accesoeng()
+    elif user == main:
+        loading_bar_light(100)
+        international()
     else:
         print ("Incorrect User")
+        time.sleep(3)
+        os.system('cls') 
         accesoeng()
 
 
@@ -186,20 +261,40 @@ def eleccioneseng():
     eleccion = input("Which entry do you choose? (If you don't remember the choices write reminder)")
     match eleccion:
         case '1':
+            carga()
             print ("Xavier Sanchez Costa")
-            eleccioneseng()
+            salir = input("Press enter to go to the main menu")
+            if salir == "":
+                os.system('cls') 
+                datoscat()
         case "2":
+            carga()
             print ("26/03/2008")
-            eleccioneseng()
+            salir = input("Press enter to go to the main menu")
+            if salir == "":
+                os.system('cls') 
+                datoscat()
         case "3":
+            carga()
             print ("Terrassa, Barcelona")
-            eleccioneseng()
+            salir = input("Press enter to go to the main menu")
+            if salir == "":
+                os.system('cls') 
+                datoscat()
         case "4":
+            carga()
             print ("Compulsory Secondary Education (ESO) / Dual Diploma")
-            eleccioneseng()
+            salir = input("Press enter to go to the main menu")
+            if salir == "":
+                os.system('cls') 
+                datoscat()
         case "5":
+            carga()
             print ("Driving, Aeronautics, Python programming")
-            eleccioneseng()
+            salir = input("Press enter to go to the main menu")
+            if salir == "":
+                datoscat()
+                os.system('cls')     
         case "reminder":
             datoseng()
         case "6":
