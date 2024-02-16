@@ -1,18 +1,23 @@
 import os
 import time
-import winsound
 from tqdm import tqdm
 from pyfiglet import figlet_format
+from replit import audio
+
 use = "xavi"
 passw = "boss"
 main = ""
 
 """Programa General"""
+def clear(seconds = 0):
+  time.sleep(seconds)
+  os.system('clear')
+  
 def carga():
-    os.system('cls')
+    clear()
     loading_bar_light(100)
     time.sleep(0.5)
-    os.system('cls')
+    clear()
     
 def loading_bar(total_iterations):
     # Display a loading bar for a given number of iterations.
@@ -33,19 +38,19 @@ def loading_bar_light(total_iterations):
 def accesoesp():
     loading_bar_light(100)
     time.sleep(0.5)
-    os.system('cls') 
+    clear() 
     user = input("Cuál es su nombre de usuario? (Presione enter para volver a la seleccion de idiomas)")
-    os.system('cls')
+    clear()
     contra = input("Cuál es su contraseña? ")
     if user == use:
         if contra == passw:
-            winsound.PlaySound('access.wav', winsound.SND_FILENAME)
+            accessaudio = audio.play_file('access.wav')
             print ("¡Accediendo a la base de datos!")
             datosesp()
         else:
             access_bar_fast(100)
             time.sleep(0.5)
-            os.system('cls')
+            clear()
             print ("Contraseña Incorrecta")
             accesoesp()
     elif user == main:
@@ -54,18 +59,18 @@ def accesoesp():
     else:
         access_bar_fast(100)
         time.sleep(0.5)
-        os.system('cls') 
+        clear() 
         print ("Usuario Incorrecto")
         print ("Espere 3 segundos para continuar")
         time.sleep(3)
-        os.system('cls') 
+        clear() 
         return accesoesp()
     
 
 def datosesp():
     access_bar_fast(100)
     time.sleep(0.5)
-    os.system('cls')
+    clear()
     print ("1. Nombre Completo")
     print ("2. Fecha de Nacimiento")
     print ("3. Ciudad de Residencia")
@@ -83,40 +88,40 @@ def eleccionesesp():
             print ("Xavier Sanchez Costa")
             salir = input("Para salir al menú principal presiona enter")
             if salir == "":
-                os.system('cls') 
+                clear() 
                 datosesp()
         case "2":
             carga()
             print ("26/03/2008")
             salir = input("Para salir al menú principal presiona enter")
             if salir == "":
-                os.system('cls') 
+                clear() 
                 datosesp()
         case "3":
             carga()
             print ("Terrassa, Barcelona")
             salir = input("Para salir al menú principal presiona enter")
             if salir == "":
-                os.system('cls') 
+                clear() 
                 datosesp()
         case "4":
             carga()
             print ("Educación Secundaria Obligatoria / Dual Diploma")
             salir = input("Para salir al menú principal presiona enter")
             if salir == "":
-                os.system('cls') 
+                clear() 
                 datosesp()
         case "5":
             carga()
             print ("Conducción, Aeronáutica, Programación en Python")
             salir = input("Para salir al menú principal presiona enter")
             if salir == "":
-                os.system('cls') 
+                clear() 
                 datosesp()
         case "recordatorio":
             datosesp()
         case "6":
-            os.system('cls')   
+            clear()   
             international()
         case other:
             print ("Entrada no valida")
@@ -127,20 +132,20 @@ def eleccionesesp():
 def accesocat():
     loading_bar_light(100)
     time.sleep(0.5)
-    os.system('cls') 
+    clear() 
     user = input("Quin és el vostre nom d'usuari? (Presiona la tecla enter per tornar a la selecció d'idiomes)")
-    os.system('cls')
+    clear()
     contra = input("Quina és la contrasenya? ")
     if user == use:
         if contra == passw:
-            winsound.PlaySound('access.wav', winsound.SND_FILENAME)
+            accessaudio = audio.play_file('access.wav')
             print ("Accedint a la base de dades!")
             datoscat()
         else:
             access_bar_fast(100)
             print ("Contrasenya Incorrecta")
             time.sleep(3)
-            os.system('cls') 
+            clear() 
             accesocat()
     elif user == main:
         loading_bar_light(100)
@@ -149,7 +154,7 @@ def accesocat():
         access_bar_fast(100)
         print ("Usuari Incorrecte")
         time.sleep(3)
-        os.system('cls') 
+        clear() 
         accesocat()
 
 
@@ -172,7 +177,7 @@ def eleccionescat():
             eleccionescat()
             salir = input("Per sortir al menú clica la tecla enter")
             if salir == "":
-                os.system('cls') 
+                clear() 
                 datoscat()
         case "2":
             carga()
@@ -180,7 +185,7 @@ def eleccionescat():
             eleccionescat()
             salir = input("Per sortir al menú clica la tecla enter")
             if salir == "":
-                os.system('cls') 
+                clear() 
                 datoscat()
         case "3":
             carga()
@@ -188,7 +193,7 @@ def eleccionescat():
             eleccionescat()
             salir = input("Per sortir al menú clica la tecla enter")
             if salir == "":
-                os.system('cls') 
+                clear() 
                 datoscat()
         case "4":
             carga()
@@ -196,7 +201,7 @@ def eleccionescat():
             eleccionescat()
             salir = input("Per sortir al menú clica la tecla enter")
             if salir == "":
-                os.system('cls') 
+                clear() 
                 datoscat()
         case "5":
             carga()
@@ -204,12 +209,12 @@ def eleccionescat():
             eleccionescat()
             salir = input("Per sortir al menú clica la tecla enter")
             if salir == "":
-                os.system('cls') 
+                clear() 
                 datoscat()
         case "recordatori":
             datoscat()
         case "6":
-            os.system('cls') 
+            clear() 
             international()
         case other:
             print ("Entrada no vàlida")
@@ -220,19 +225,19 @@ def eleccionescat():
 def accesoeng():
     loading_bar_light(100)
     time.sleep(0.5)
-    os.system('cls') 
+    clear() 
     user = input("What is your username? (Press enter to return to the language selection)")
-    os.system('cls')
+    clear()
     contra = input("What is your password? ")
     if user == use:
         if contra == passw: 
-            winsound.PlaySound('access.wav', winsound.SND_FILENAME)
+            accessaudio = audio.play_file('access.wav')
             print ("Accessing the database!")
             datoseng()
         else:
             print ("Incorrect Password")
             time.sleep(3)
-            os.system('cls') 
+            clear() 
             accesoeng()
     elif user == main:
         loading_bar_light(100)
@@ -240,14 +245,14 @@ def accesoeng():
     else:
         print ("Incorrect User")
         time.sleep(3)
-        os.system('cls') 
+        clear() 
         accesoeng()
 
 
 def datoseng():
     access_bar_fast(100)
     time.sleep(0.5)
-    os.system('cls') 
+    clear() 
     print ("1. Full Name")
     print ("2. Date of Birth")
     print ("3. Residence City")
@@ -265,28 +270,28 @@ def eleccioneseng():
             print ("Xavier Sanchez Costa")
             salir = input("Press enter to go to the main menu")
             if salir == "":
-                os.system('cls') 
+                clear() 
                 datoscat()
         case "2":
             carga()
             print ("26/03/2008")
             salir = input("Press enter to go to the main menu")
             if salir == "":
-                os.system('cls') 
+                clear() 
                 datoscat()
         case "3":
             carga()
             print ("Terrassa, Barcelona")
             salir = input("Press enter to go to the main menu")
             if salir == "":
-                os.system('cls') 
+                clear() 
                 datoscat()
         case "4":
             carga()
             print ("Compulsory Secondary Education (ESO) / Dual Diploma")
             salir = input("Press enter to go to the main menu")
             if salir == "":
-                os.system('cls') 
+                clear() 
                 datoscat()
         case "5":
             carga()
@@ -294,11 +299,11 @@ def eleccioneseng():
             salir = input("Press enter to go to the main menu")
             if salir == "":
                 datoscat()
-                os.system('cls')     
+                clear()     
         case "reminder":
             datoseng()
         case "6":
-            os.system('cls') 
+            clear() 
             international()
         case other:
             print ("Invalid input")
@@ -308,29 +313,28 @@ def eleccioneseng():
 def international():
     print(figlet_format("Database |A|", font = "big"))
     loading_bar(100)
-    winsound.PlaySound('start12345.wav', winsound.SND_FILENAME)
+    startaudio = audio.play_file('start12345.wav')
     time.sleep(2.5)
-    os.system('cls')
     print ("Bienvenido a la base de datos! / Benvingut a la base de dades! / Welcome to the database! :)")
     idioma = input("Que idioma? (ESP)/ Quin idioma? (CAT)/ What language? (ENG)")
     match idioma:
         case "ESP":
-            os.system('cls') 
+            clear() 
             accesoesp()
         case "esp":
-            os.system('cls') 
+            clear() 
             accesoesp()
         case "CAT":
-            os.system('cls') 
+            clear() 
             accesocat()
         case "cat":
-            os.system('cls') 
+            clear() 
             accesocat()
         case "ENG":
-            os.system('cls') 
+            clear() 
             accesoeng()
         case "eng":
-            os.system('cls') 
+            clear() 
             accesoeng()
         case other:
             print ("Incorrecto / Incorrecte / Bad Input")
